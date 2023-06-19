@@ -9,14 +9,15 @@ class MachinesController
 {
     public function index()
     {
-        echo "<h1>Listar as máquinas</h1>";
         //deve ser implementado em Models
         //$machines = DB::select('SELECT id, name FROM machines');
         //dd($machines); //dd é igual a varbump e para o processamento
 
-        
         $machines = Machine::all();
-        dd($machines); //dd é igual a varbump e para o processamento
+        //imprimir é na View
+        //dd($machines); //dd é igual a varbump e para o processamento
+
+        return view('machines.index')->with('machines', $machines);
 
     }
 
