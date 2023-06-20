@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Models\Machine;
 
 class MachinesController
@@ -24,5 +25,18 @@ class MachinesController
     public function show($id)
     {
         echo "<h1>Visualizar a máquina $id.</h1>";
+    }
+
+    public function create()
+    {
+        return view('machines.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        Machine::create($request->only(['name']));
+
+        return redirect('/listar-maquinas');
     }
 }
