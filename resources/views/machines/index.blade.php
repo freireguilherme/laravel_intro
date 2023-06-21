@@ -1,5 +1,9 @@
 <x-layout title='Listar as Máquinas'>
+
+    <a href="{{ route('machines.create') }}">Cadastrar</a>
     <h1>Listar as Máquinas</h1>
+
+    @include('components/flash-message')
 
     <table>
         <thead>

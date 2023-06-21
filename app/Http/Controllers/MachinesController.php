@@ -37,6 +37,6 @@ class MachinesController
 
         Machine::create($request->only(['name']));
 
-        return redirect('/listar-maquinas');
+        return redirect('machines')->with('sucesso', "Máquina cadastrada com sucesso!");
     }
 }
