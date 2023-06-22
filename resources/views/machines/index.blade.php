@@ -10,6 +10,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
@@ -19,6 +20,9 @@
                 <tr>
                     <td>{{$machine->id}}</td>
                     <td>{{$machine->name}}</td>
+                    <td>
+                        <a href="{{ route('machines.show', $machine->id) }}">Visualizar</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
