@@ -51,4 +51,11 @@ class MachinesController
 
         return redirect()->route('machines.index')->with('sucesso', "Máquina editada com sucesso!");
     }
+
+    public function destroy(Machine $machine)
+    {
+        $machine->delete();
+
+        return redirect()->route('machines.index')->with('sucesso', "Máquina apagada com sucesso!");
+    }
 }
